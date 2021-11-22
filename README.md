@@ -1,0 +1,11 @@
+# Lucius.Identity
+
+Lucius Identity is one of the sub-system for the Identity Manamgenent System.
+
+## User Management Service
+
+Many systems need user identity data. While this data can be communicated to those systems using a Federation Service and STS in some cases, the data is often needed at points where they are not involved. A Federation Service and STS are only involved in a transaction when a user is performing federated authentication. Post- or pre-authentication, systems may need information about a user. Obtaining such information in these cases is outside of the scope of the endpoints that are provided by the STS and Federation Service. For this, the Identity System needs to include a User Management Service.
+
+A User Management Service is an abstraction of one or more Identity Repositories. It provides user management capabilities, such as the ability to Create, Retrieve, Update, and Delete (CRUD) user data. A User Management Service can be used by a Federation Service or STS to populate tokens with user info; however, its primary consumers are outside of the Identity System.
+
+For this abstraction to be interoperable, the CRUD interface that the User Management Service exposes must be standards-based. There are very few choices, and the best one is System for Cross- domain Identity Management (SCIM) or Simple Cloud Identity Management as SCIM originally stood for. This lightweight RESTful protocol exposes a resource-oriented API to perform CRUD operations on users and groups. The API also supports bulk updates and precision updates to just certain attributes (an operation known as patching). SCIM also defines a normative set of user attributes and group attributes, necessary for widespread interoperability. Though this protocol is newer than others discussed in this paper, there are over a dozen open-source and commercially available products that support it; there have also been numerous public interop tests of these; and the protocol has been submitted to the IETF for ratification as an internet standard.
