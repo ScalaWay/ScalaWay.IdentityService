@@ -1,6 +1,5 @@
-﻿using Lucius.Data.EFCore;
-using Lucius.Domain.Abstractions;
-using Lucius.Identity.EntityFramework.Sqlite;
+﻿using Lucius.Domain.Abstractions.Entities;
+using Lucius.Identity.EntityFrameworkCore.Sqlite;
 
 namespace Lucius.Identity.Data
 {
@@ -11,11 +10,11 @@ namespace Lucius.Identity.Data
     public sealed class IdentityRepository<TAggregateRoot> : SpecificationRepository<TAggregateRoot>
         where TAggregateRoot : class, IAggregateRoot
     {
-        private readonly LuciusIdentityDbContext _luciusIdentityDbContext;
+        private readonly LuciusIdentityDbContext luciusIdentityDbContext;
 
         public IdentityRepository(LuciusIdentityDbContext dbContext) : base(dbContext)
         {
-            _luciusIdentityDbContext = dbContext;
+            luciusIdentityDbContext = dbContext;
         }
     }
 }

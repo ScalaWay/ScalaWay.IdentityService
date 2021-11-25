@@ -1,10 +1,4 @@
 ﻿using Lucius.Identity.Permissions.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lucius.Identity.Permissions.Domain
 {
@@ -13,6 +7,5 @@ namespace Lucius.Identity.Permissions.Domain
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public bool IsValid => throw new NotImplementedException();
-
     }
 }

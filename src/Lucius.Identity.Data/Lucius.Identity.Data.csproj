@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Lucius.Core\src\Lucius.Data.EFCore\Lucius.Data.EFCore.csproj" />
-    <ProjectReference Include="..\Lucius.Identity.EntityFramework.Sqlite\Lucius.Identity.EntityFramework.Sqlite.csproj" />
+    <ProjectReference Include="..\..\..\Lucius\src\Lucius.EntityFrameworkCore\Lucius.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Lucius.Identity.EntityFrameworkCore.Sqlite\Lucius.Identity.EntityFrameworkCore.Sqlite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

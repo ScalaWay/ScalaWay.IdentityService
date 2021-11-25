@@ -1,10 +1,6 @@
-using Lucius.Data.EFCore.Extensions;
-using Lucius.Data.EFCore.Settings;
-using Lucius.Identity.Data;
-using Lucius.Identity.EntityFramework.Sqlite;
 using Lucius.Specification.Abstractions;
 
-var appName = nameof(Lucius.Identity.API);
+string appName = nameof(Lucius.Identity.API);
 var configuration = GetConfiguration();
 
 Log.Logger = CreateSerilogLogger(configuration);
@@ -14,6 +10,7 @@ try
     Log.Information("Configuring web host ({ApplicationContext})...", appName);
     var builder = WebApplication.CreateBuilder(args);
 
+    // Scan every base controller insides assembly and register them in DI.
     builder.Services.AddControllers();
 
     // Register swagger generator.
@@ -26,13 +23,15 @@ try
     // Register database provider.
     builder.Services.AddSqliteDbContext<LuciusIdentityDbContext>(new SQLiteDbSettings()
     {
-        DataSource = "Data Source=LuciusIdentity.db;",
-        MigrationAssembly = "Lucius.Identity.EntityFramework.Migrations"
+        DataSource = configuration.GetConnectionString("LuciusIdentity"),
+        MigrationAssembly = "Lucius.Identity.EntityFrameworkCore.Migrations"
     });
+
+    builder.Services.AddLuciusIdentity<LuciusIdentityDbContext>();
 
     // Register business services.
     builder.Services.AddScoped(typeof(ISpecificationRepository<>), typeof(IdentityRepository<>));
-    
+
     var app = builder.Build();
 
     Log.Information("Configuring HTTP request pipeline ({ApplicationContext})...", appName);
@@ -45,9 +44,13 @@ try
         app.UseSwaggerUI();
     }
 
+    app.UseHttpsRedirection();
     app.UseRouting();
 
-    app.UseHttpsRedirection();
+
+    // UseAuthentication adds Identity authentication middleware to the request pipeline.
+    app.UseAuthentication();
+
 
     app.UseAuthorization();
 
@@ -59,7 +62,9 @@ try
 
     Log.Information("Starting application ({ApplicationContext})...", appName);
     app.Run();
-} catch (Exception ex) {
+}
+catch (Exception ex)
+{
     Log.Fatal(ex, "Program terminated unexpectedly ({ApplicationContext})!", appName);
 }
 

@@ -1,19 +1,9 @@
-﻿using Lucius.Identity.Permissions.Domain;
-using Lucius.Identity.Permissions.Provider;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace Lucius.Identity.Permissions.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-
         public static void AddPermissionPolicies(this IServiceCollection services, string configSection = "permissions")
         {
             if (services == null)
@@ -38,6 +28,5 @@ namespace Lucius.Identity.Permissions.Extensions
             //    return (IPermissionPolicyProvider)sp.GetRequiredService<IAuthorizationPolicyProvider>();
             //});
         }
-
     }
 }

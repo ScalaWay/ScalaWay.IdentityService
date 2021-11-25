@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,10 +8,16 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Lucius.Core\src\Lucius.Domain\Lucius.Domain.csproj" />
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Lucius\src\Lucius.Domain.Abstractions\Lucius.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\Lucius.Identity.Domain.Abstractions\Lucius.Identity.Domain.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
