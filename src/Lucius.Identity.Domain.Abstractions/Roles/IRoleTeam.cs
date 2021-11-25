@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucius.Identity.Domain.Abstractions
+namespace Lucius.Identity.Domain.Abstractions.Roles
 {
-    public interface IAccountLogin
+    public interface IRoleTeam : IRole
     {
+
     }
 }

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Lucius.Identity.Domain.Entities.Roles
 {
-    public class RoleEntity : IdentityRole<int>, IAggregateRoot<int>, IRole
+    public class RoleEntity : IdentityRole<Guid>, IAggregateRoot<Guid>, IRole
     {
 
         public RoleEntity() : base() { }

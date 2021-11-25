@@ -17,8 +17,6 @@ namespace Lucius.Identity.Domain.Abstractions
 
         string DisplayName { get; set; }
 
-        IEnumerable<IP>
-
         IPermissionGroup PermissionGroup { get; set; }
     }
 }

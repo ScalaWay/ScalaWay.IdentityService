@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucius.Identity.Domain.Abstractions
+namespace Lucius.Identity.Domain.Entities.Roles
 {
-    public interface IAccountLogin
+    public class RoleClaimEntity
     {
     }
 }

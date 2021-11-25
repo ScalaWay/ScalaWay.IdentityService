@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Lucius.Identity.Domain.Abstractions.Accounts
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public interface IAccountPermission : IEntity<Guid>
+    public interface IAccountProfile : IEntity<Guid>
     {
         IAccount Account { get; set; }
 
-        IPermissionGrant Permission { get; set; }
+        string FirstName { get; set; }
 
+        string LastName { get; set; }
     }
 }

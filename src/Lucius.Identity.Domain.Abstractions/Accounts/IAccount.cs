@@ -1,4 +1,5 @@
 ﻿using Lucius.Domain.Abstractions.Entities;
+using Lucius.Identity.Domain.Abstractions.Accounts;
 
 namespace Lucius.Identity.Domain.Abstractions
 {
@@ -6,9 +7,11 @@ namespace Lucius.Identity.Domain.Abstractions
     {
         IRole Role { get; set; }
 
+        IAccountProfile Profile { get; set; }
+
         IEnumerable<ITeam> Teams { get; set; }
 
-        IEnumerable<IPermission> Permissions { get; set; }
+        IEnumerable<IPermissionGrant> Permissions { get; set; }
 
         string UserName { get; set; }
 

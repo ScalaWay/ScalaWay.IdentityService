@@ -17,7 +17,7 @@ namespace Lucius.Identity.Domain.Entities.Accounts
 
         public int PermissionId { get; set; }
 
-        public IPermission Permission { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IPermissionGrant Permission { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Guid Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

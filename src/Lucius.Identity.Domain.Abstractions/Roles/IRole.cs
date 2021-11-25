@@ -12,7 +12,7 @@ namespace Lucius.Identity.Domain.Abstractions
     /// Non-static (dynamic) roles can be added/removed by users and we can not know their name while coding.
     /// A user can have multiple roles. Thus, user will have all permissions of all assigned roles.
     /// </remarks>
-    public interface IRole : IEntity<int>
+    public interface IRole : IEntity<Guid>
     {
 
         /// <summary>
@@ -28,6 +28,11 @@ namespace Lucius.Identity.Domain.Abstractions
         string Name { get; set; }
 
         string Description { get; set; }
+
+    }
+
+    public interface IRole<TEntity> : IRole
+    {
 
     }
 }

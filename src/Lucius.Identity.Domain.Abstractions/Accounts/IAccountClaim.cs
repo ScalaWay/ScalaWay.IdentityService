@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lucius.Identity.Domain.Abstractions
 {
-    internal interface IAccountClaim
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IAccountClaim
     {
     }
 }

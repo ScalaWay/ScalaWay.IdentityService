@@ -1,4 +1,5 @@
-﻿using Lucius.Identity.Domain.Models;
+﻿using Lucius.Identity.Domain.Entities.Accounts;
+using Lucius.Identity.Domain.Entities.Roles;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Lucius.Identity.Domain.Entities.Accounts;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Lucius.Identity.EntityFrameworkCore.Sqlite.Configurations

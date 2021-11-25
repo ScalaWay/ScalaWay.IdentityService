@@ -10,8 +10,16 @@ using System.Threading.Tasks;
 
 namespace Lucius.Identity.Domain.Entities.Accounts
 {
+    /// <summary>
+    /// One to many association for an Account with a Role.
+    /// </summary>
     public class AccountRoleEntity : IAccountRole
     {
+
+        public AccountRoleEntity()
+        {
+
+        }
 
         public RoleEntity Role { get; set; }
 

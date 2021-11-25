@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lucius.Identity.Domain.Entities
+namespace Lucius.Identity.Domain.Entities.Teams
 {
     public class TeamEntity : IAggregateRoot<Guid>, ITeam
     {

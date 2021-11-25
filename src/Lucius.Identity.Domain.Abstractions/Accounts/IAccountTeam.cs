@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lucius.Identity.Domain.Abstractions.Roles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,6 @@ namespace Lucius.Identity.Domain.Abstractions.Accounts
         /// <summary>
         /// Role of the member inside a team.
         /// </summary>
-        IRole Role { get; set; }
+        IRoleTeam Role { get; set; }
     }
 }

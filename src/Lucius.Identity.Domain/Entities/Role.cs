@@ -4,13 +4,19 @@ namespace Lucius.Identity.Domain.Entities.Implementations
 {
     public class Role : IRole
     {
-        public bool IsDefault { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public ICollection<IAccount> Accounts => throw new NotImplementedException();
+        public Role()
+        {
 
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsStatic { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        }
+
+        public bool IsDefault { get; set; }
+
+        public ICollection<IAccount> Accounts { get; set; }
+
+        public Guid Id { get; set; }
+        public bool IsStatic { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
