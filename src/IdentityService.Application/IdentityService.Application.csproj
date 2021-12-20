@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Douanier\src\Douanier\Douanier.csproj" />
+    <ProjectReference Include="..\IdentityService.Application.Contracts\IdentityService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\IdentityService.Domain.Models\IdentityService.Domain.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Authentication\" />
+  </ItemGroup>
+
+</Project>
